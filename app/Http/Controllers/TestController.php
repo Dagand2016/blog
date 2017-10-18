@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Test;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        $postsTest = Test::all();
-        return view('test', compact('$tests'));
+        $tests = Test::all();
+        return view('test', compact('tests'));
     }
 
     /**
@@ -25,7 +26,8 @@ class TestController extends Controller
      */
     public function create()
     {
-        
+        $createTest = Test::all();
+        return view('edit.form', compact('createTest'));
     }
 
     /**
@@ -81,6 +83,7 @@ class TestController extends Controller
      */
     public function destroy(Test $test)
     {
-        //
+        $test->delete();
+        return redirect()->route('test');
     }
 }

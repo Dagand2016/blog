@@ -1,0 +1,24 @@
+.row{
+	background: #333333;
+}
+.container{
+	margin-top: 200px;
+	font-size: 18px;
+}
+
+.form-row{
+	border-radius: 15px;
+	background: #CC6600;
+	margin-left: 20%;
+}
+
+.table{
+	background: #CC6600;
+	border-radius: 15px;
+}
+
+form .btn{
+	margin-left: 35%;
+	margin-top: -20px;
+	margin-bottom: 20px;
+
