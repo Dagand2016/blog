@@ -9,31 +9,32 @@
 </head>
 <body class="row">
     <div class="container center-block">
-      <form class="table-form" role="form" method="post">
+      <form class="table-form" role="form" method="post" action="{{route('store')}}" >
       <div class="form-row col-5 ">
         <div>
             <div> <label for="name" class="col-form-label">Имя</label> </div>
-            <div> <input type="text" class="form-control" id="name" placeholder="Напишите имя" name="_method"> </div>
+            <div> <input type="text" class="form-control" id="name" placeholder="Напишите имя" name="name"> </div>
             <br/>
         </div>
         <div>
             <div> <label for="surname" class="col-form-label"></label> Фамилия</div>
-            <div> <input type="text" class="form-control" id="surname" placeholder="Напишите фамилию" name="_method"> </div>
+            <div> <input type="text" class="form-control" id="surname" placeholder="Напишите фамилию" name="surname"> </div>
             <br/>
         </div>  
         <div>
             <label for="InputEmail" class="col-form-label">Email адрес</label>
-            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Напишите Емайл" name="_method">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Напишите Емайл" name="email">
             <br/>
         </div>
         <div>
             <div> <label for="years" class="col-form-label"></label> Возраст</div>
-            <div> <input type="text" class="form-control" id="years" placeholder="Напишите возраст" name="_method"> </div>
+            <div> <input type="text" class="form-control" id="years" placeholder="Напишите возраст" name="years"> </div>
             <br/>
         </div class="edit">
             <br/>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </div>
+        {{csrf_field()}}
       </form>
     </div>
     

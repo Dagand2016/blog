@@ -27,7 +27,7 @@ class TestController extends Controller
     public function create()
     {
         $createTest = Test::all();
-        return view('edit.form', compact('createTest'));
+        return view('create.form', compact('createTest'));
     }
 
     /**
@@ -38,7 +38,18 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required|max:10',
+            'surname' => 'required|max:15',
+            'email' => 'required|max:25|unique:tests',
+            'years' => 'required|max:2'
+        ]);
+        $data = $request->all();
+        $test = new Test;
+        $test->fill($data);
+        $test->save();
+        return redirect()->route('tests');
+
     }
 
     /**
