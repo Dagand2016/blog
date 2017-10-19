@@ -28,14 +28,20 @@
       	<td>{{ $test->surname }}</td>
       	<td>{{ $test->email }}</td>
       	<td>{{ $test->years }}</td>
-      	<td><button type="button" class="btn btn-primary">Edit</button></td>
-      	<td><button type="button" class="btn btn-danger">Delete</button></td>
+      	<td><button type="" class="btn btn-primary">Изменить</button></td>
+        <td>
+        <form class="test-table" action="{{route('delete', $test)}}" method="post">
+            <input type="hidden" name="_method" value="Delete">
+            {{csrf_field()}}
+            <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+        </td>
     </tr>
     @endforeach
   </tbody>
 </table>
 
-		<td><button type="button" class="btn btn-success text-center">создать новую запись?</button></td>
+		<td><a href="{{route('create')}}" class="btn btn-success btn-small" >Создать новую запись</a></td>
     </div>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

@@ -2,23 +2,28 @@
 	background: #333333;
 }
 .container{
-	margin-top: 200px;
+	margin-top: 130px;
 	font-size: 18px;
 }
 
 .form-row{
 	border-radius: 15px;
 	background: #CC6600;
-	margin-left: 20%;
+	margin-left: 25%;
 }
+
 
 .table{
 	background: #CC6600;
 	border-radius: 15px;
 }
 
-form .btn{
-	margin-left: 35%;
-	margin-top: -20px;
+.form-row .btn{
+	margin-top: -10px;
 	margin-bottom: 20px;
+	margin-left: 35%;
+}
 
+a{
+	margin-bottom: 80px;
+}
